@@ -16,7 +16,7 @@
     function displayPoints(pointsParam){
 
         var pointsContainer = document.querySelector('.points')
-        pointsContainer.innerText = 'Punkty: ' + pointsParam
+        pointsContainer.innerText = 'Pkt' + pointsParam
 
 
     }
@@ -33,7 +33,7 @@
     function displayTime(timeParam){
 
         var timeContainer = document.querySelector('.time')
-        timeContainer.innerText = 'Czas: ' + timeParam
+        timeContainer.innerText = 'Czas' + timeParam
 
     }
 
