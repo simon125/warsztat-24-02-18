@@ -1,14 +1,13 @@
+var body= document.querySelector('body')
 
-function hello(name, j){
+console.log(body)
 
+body.addEventListener(
+    
+    'click',
 
-
-    for(var i = 0 ; i<j; i++){
-
-        console.log('hello ' + name)
+    function(){
+        console.log('klik')
 
     }
- }
-
- //function invocation (call)
- hello('Szymon', 7)
+)
