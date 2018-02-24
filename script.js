@@ -41,3 +41,12 @@ var nastedObj = {
 }
 
 console.log(nastedObj.car.model)
+
+
+var simplestArray = [{name: "Ala", wiek: 20},2,3,4,5]
+
+
+console.log(simplestArray)
+console.log(simplestArray[3])
+console.log(simplestArray[0].wiek)
+
