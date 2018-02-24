@@ -18,12 +18,27 @@ body{
     background-repeat: no-repeat;
 }
 
-.points, .time{
+.points{
+    padding: 40px;
     position: absolute;
     left: 0;
     top: 0;
     font-size: 3em;
     color: white;
+    
+    
+}
+
+.time{
+
+    padding: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 3em;
+    color: white;
+
+
 }
 
 .messages{

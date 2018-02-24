@@ -1,4 +1,31 @@
 (function(){
+    var points
+    var time
+    var mole
+
+
+    function addPoint(){
+        points++
+        console.log('dodano punkt', points)
+        displayPoints(points)
+        
+    }
+
+    function displayPoints(pointsParam){
+
+        var pointsContainer = document.querySelector('.points')
+        pointsContainer.innerText = pointsParam
+
+
+    }
+
+    function displayTime(timeParam){
+
+        var timeContainer = document.querySelector('.time')
+        timeContainer.innerText = timeParam
+
+    }
+
 
     function makeMole(){
 
@@ -17,10 +44,37 @@
             mole.style.left = molePosX + 'px'
             mole.style.top = molePosY + 'px'
 
+
+            mole.addEventListener(
+                'click',
+                function(){
+                    mole.remove()
+                    addPoint()
+
+
+
+           })
+
             document.querySelector('body').appendChild(mole)
+
+            return mole
     }
 
-    makeMole()
+
+
+    function init(){
+
+        points = 0
+        time = 10 
+        mole = makeMole()
+
+        displayPoints("punkty: " + points)
+        displayTime("czas:  " + time)
+
+
+    }
+
+    init()
 
 
 })()
