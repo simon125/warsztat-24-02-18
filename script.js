@@ -8,7 +8,7 @@
     function addPoint(){
        
         points++
-        console.log('dzialam')
+       
         displayPoints(points)
         
     }
@@ -63,8 +63,6 @@
                     addPoint()
                     flashBackground()
 
-
-
            })
 
             document.querySelector('body').appendChild(mole)
@@ -75,8 +73,14 @@
     function endGame(){
             clearInterval(gameIntervalId)
             mole.remove()
-            alert('game was ended!\nYour score was: ' + points + ' !')
 
+            document.querySelector('.end-modal .score').innerText = points + ' punktów!'
+            
+            document.querySelector('.end-modal').style.display = 'block'
+
+           document.querySelector('.end-modal button').addEventListener('click', function(){
+               window.location =''
+           })
 
     }
 
@@ -93,16 +97,8 @@
 
     }
 
-    function init(){
-
-        points = 0
-        time = 10 
+    function startGame(){
         mole = makeMole()
-
-        displayPoints(points)
-        displayTime(time)
- 
-
         gameIntervalId = setInterval(
             function(){
 
@@ -112,9 +108,29 @@
                     
             },
 
-            3000
+            1500
 
         )
+
+
+    }
+
+    function init(){
+
+        points = 0
+        time = 10 
+        mole = null
+
+        displayPoints(points)
+        displayTime(time)
+ 
+        document.querySelector('.start-modal button').addEventListener('click', function(){
+            document.querySelector('.start-modal').style.display = 'none'
+            startGame()
+        })
+
+        
+        
 
 
     }
